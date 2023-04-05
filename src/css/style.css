@@ -9,17 +9,22 @@ html {
 
 body {
     display: grid;
+    align-items: center;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     grid-template-areas:
         "logo logo logo"
-        "mockup info ."
+        ". mockup info"
         "footer footer footer";
-    height: 100vh;
+    max-width: 1440px;
+    min-height: 100vh;
     background-image: url("../images/bg-desktop.svg");
     background: cover;
+    background-repeat: no-repeat;
     background-color: var(--background);
+    background-size: cover;
     color: #fff;
+    padding: 0 0 0 80px;
 }
 
 .logo {
@@ -30,10 +35,7 @@ body {
 
 .mockup {
     grid-area: mockup;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 50px;
+    padding: 0 80px 0 100px;
 }
 
 .mockup img {
@@ -87,20 +89,29 @@ body {
     margin-right: 10rem;
 }
 
-.footer i {
+.footer a {
     color: #fff;
-    font-size: 4rem;
+    font-size: 2.5rem;
     margin: 20px;
     transition: 0.3s;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    text-decoration: none;
 }
 
-.footer i:hover {
+.footer a:hover {
+    border: 1px solid var(--hover);
     color: var(--hover);
     transform: scale(1.1);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 950px) {
     body {
         display: flex;
         flex-wrap: wrap;
@@ -108,14 +119,87 @@ body {
         justify-content: center;
         background-image: url('../images/bg-mobile.svg');
         overflow-x: hidden;
+        padding: 0;
     }
 
     .info {
-        margin-left: 60px;
+        margin-left: 25%;
         text-align: center;
     }
 
-.footer {
-    margin-left: 60px;
+    .info h1 {
+        font-size: 3.5rem;
+    }
+
+    .info p {
+        font-size: 1.5rem;
+    }
+
+    .footer {
+        margin-left: 100px;
+    }
+
+    .logo {
+        margin-left: -130px; 
+
+    }
+
+    .logo img {
+        height: 50px;
+        width: 150px;
+    }    
 }
+
+@media (min-width: 2000px){
+    body {
+        align-items: center;
+        justify-content: center;
+        padding-left: 25%;
+    }
+
+    .mockup img {
+        width: 700px;
+        height: 500px;
+        margin: 0 150px 0 -250px;
+    }
+
+    .info h1 {
+        font-size: 6rem;
+    }
+
+    .info p {
+        font-size: 3rem;
+    }
+
+    .btn {
+        width: 300px;
+        height: 80px;
+        margin-top: 50px;
+    }
+
+    .logo {
+        margin-left: -260px;
+    }
+
+    .logo img {
+        height: 150px;
+        width: 400px;
+    }  
+
+    .footer a {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1400px) {
+
+    .info {
+        width: 400px;
+    }
+
+    .logo img {
+        height: 50px;
+        width: 150px;
+    }  
 }
