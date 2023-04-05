@@ -43,7 +43,7 @@ body {
 }
 
 .info {
-    margin-right: 50px;
+    margin-right: -100px;
     grid-area: info;
     padding: 50px 50px 0 0;
     max-width: 670px;
